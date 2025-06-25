@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #1976d2;
+  --secondary-color: #0288d1;
+  --success-color: #2e7d32;
+  --warning-color: #ed6c02;
+  --error-color: #d32f2f;
+  --info-color: #0288d1;
+  --background-color: #f5f7fa;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: #333;
+}
+
+/* Custom class for medical background gradient */
+.medical-gradient {
+  background: linear-gradient(135deg, rgba(240, 249, 255, 1) 0%, rgba(214, 240, 253, 1) 100%);
+}
+
+/* Transitions */
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.page-transition-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 300ms, transform 300ms;
+}
+
+/* Animate hover effects */
+.hover-scale {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Result cards */
+.result-card {
+  transition: all 0.3s ease;
+  border-width: 2px;
+}
+
+.result-card.no-dementia {
+  border-color: var(--success-color);
+  background-color: rgba(46, 125, 50, 0.05);
+}
+
+.result-card.mild {
+  border-color: var(--info-color);
+  background-color: rgba(2, 136, 209, 0.05);
+}
+
+.result-card.moderate {
+  border-color: var(--warning-color);
+  background-color: rgba(237, 108, 2, 0.05);
+}
+
+.result-card.severe {
+  border-color: var(--error-color);
+  background-color: rgba(211, 47, 47, 0.05);
+}
