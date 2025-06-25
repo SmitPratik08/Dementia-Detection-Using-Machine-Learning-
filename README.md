@@ -1,33 +1,256 @@
-# Dementia-Detection-Using-Machine-Learning-
-ABSTRACT 
- 
-Dementia is a progressive neurological condition that severely affects cognitive functions such as memory, reasoning, and decision-making, ultimately disrupting an individual's ability to perform everyday activities. The growing prevalence of dementia worldwide, especially among the elderly population, has made early detection a critical aspect of effective clinical care and management. However, traditional diagnostic approaches, including clinical evaluations and neuroimaging assessments, are often subjective, time-consuming, and financially demanding, creating an urgent need for reliable, objective, and efficient diagnostic support systems that can assist healthcare professionals in identifying dementia at its earliest stages. In this context, the present project explores the potential of machine learning (ML) techniques for the early detection and classification of dementia. By utilizing the publicly available OASIS longitudinal dataset, which comprises demographic, clinical, cognitive, and neuroimaging-related data, this study applies various ML algorithms to classify individuals as non-demented, mildly demented, or fully demented. The methodology followed a structured pipeline involving data acquisition, preprocessing, feature engineering, model training, and evaluation. Preprocessing steps included handling missing values, normalization, and encoding of categorical variables to ensure data quality and model compatibility, while feature selection and dimensionality reduction techniques such as correlation analysis and Principal Component Analysis (PCA) were employed to enhance model performance. Multiple machines learning models, including Support Vector Machines (SVM), Random Forests, Logistic Regression, and Artificial Neural Networks (ANN), were implemented and assessed using metrics such as accuracy, precision, recall, F1-score, and AUC-ROC. Among the models tested, the ANN achieved the highest accuracy and AUC-ROC scores, indicating its superior capability in capturing complex, non-linear relationships within the data, while Random Forests also performed competitively, offering valuable interpretability through feature importance rankings. The findings from this study confirm that machine learning techniques can serve as reliable tools for dementia detection, offering rapid, data-driven insights that support clinical decision-making. While the results are promising, future work can focus on integrating multimodal data, improving model interpretability, and validating the system within real-world clinical environments. 
+# Dementia Detection System - Frontend
 
-INTRODUCTION
-Dementia is a chronic and progressive neurological disorder that affects cognitive functions such as memory, thinking, reasoning, language, and the ability to perform everyday activities. It is most commonly observed in older adults and significantly impacts both patients and their caregivers. Among various types of dementia, Alzheimer’s disease accounts for the majority of cases. Early and accurate detection of dementia is crucial, as it allows for timely medical intervention, better management of symptoms, and improved planning for future care. However, conventional diagnostic techniques often depend on expensive neuroimaging procedures and subjective clinical assessments, which can delay diagnosis and reduce accessibility for all patients. With the advancement of artificial intelligence and data science, machine learning (ML) has emerged as a powerful tool in the healthcare sector, capable of identifying hidden patterns in large datasets that are not easily detectable by human observation. This project aims to utilize machine learning algorithms to develop a reliable dementia detection system by analysing clinical, demographic, and imaging-based data. The publicly available OASIS longitudinal dataset is used, which includes features such as age, gender, Mini-Mental State Examination (MMSE) scores, Clinical Dementia Rating (CDR), and MRI-derived brain volume measures. Models such as Support Vector Machines (SVM), Random Forests, and Neural Networks are implemented and compared for performance. The primary goal of this research is to assist healthcare professionals in diagnosing dementia more efficiently, ultimately leading to faster intervention, personalized care, and a better quality of life for those affected by this debilitating condition.
+A machine learning-powered clinical tool that predicts early signs of dementia based on patient data.
 
-1.1 Introduction to the Project
-Dementia is a progressive neurological disorder that impairs memory, reasoning, and daily functioning, primarily affecting the elderly. Early detection is crucial for effective care and improving patient outcomes. However, traditional diagnostic methods, such as clinical evaluations and neuroimaging, are often subjective, time-consuming, and expensive. This project aims to develop a machine learning-based system for the early detection of dementia using clinical, demographic, and neuroimaging data. By leveraging the OASIS longitudinal dataset, various machine learning algorithms, including Support Vector Machines (SVM), Random Forests, Logistic Regression, and Artificial Neural Networks (ANN), are implemented to classify individuals as non-demented, mildly demented, or fully demented. The methodology involves data preprocessing, feature selection, model training, and performance evaluation using accuracy, precision, recall, and AUC-ROC metrics.
+## Features
 
-This intelligent approach enables the identification of subtle patterns and correlations in patient data that may be difficult for human experts to detect. By automating the classification process, the proposed system reduces diagnostic delays and assists healthcare professionals in making informed, evidence-based decisions. Moreover, the model’s output can be visualized and interpreted through explainable AI techniques to enhance transparency and clinical acceptance. The integration of machine learning into dementia diagnostics not only improves accuracy but also ensures scalability, affordability, and accessibility for broader healthcare systems. Overall, this project contributes to the growing field of AI-assisted healthcare solutions, with the ultimate goal of enhancing patient care, supporting early intervention strategies, and improving the quality of life for individuals at risk of cognitive decline.
- 
-1.2 Statement of the Problem
-Dementia is a growing global health issue that leads to a progressive decline in cognitive abilities, affecting memory, reasoning, behaviour, and the ability to perform everyday tasks. According to the World Health Organization, over 55 million people are currently living with dementia, and this number is expected to rise significantly in the coming decades due to an aging global population. Despite its increasing prevalence and impact on individuals, families, and healthcare systems, the early and accurate diagnosis of dementia continues to pose a major challenge in clinical settings.
+- **Patient Data Input**: Comprehensive form for entering demographic, clinical, and brain measurement data
+- **Real-time Prediction**: Machine learning model integration for instant dementia risk assessment
+- **Professional UI**: Medical-grade interface built with Material UI and Tailwind CSS
+- **Responsive Design**: Works seamlessly across desktop, tablet, and mobile devices
+- **Backend Integration**: RESTful API communication with Flask backend
 
-Traditional diagnostic techniques, such as neuropsychological assessments and brain imaging (e.g., MRI or CT scans), require significant time, financial resources, and access to specialized medical expertise. These approaches are often limited by subjectivity, inter-observer variability, and inconsistent availability, especially in resource-constrained environments. Furthermore, the early symptoms of dementia—such as mild memory loss or confusion—can be subtle and easily mistaken for normal aging or other conditions, leading to delayed diagnosis and missed opportunities for timely intervention.
+## Tech Stack
 
-There is, therefore, a critical need for a diagnostic approach that is objective, scalable, cost-effective, and capable of identifying dementia in its early stages. This project aims to bridge this gap by developing a machine learning-based detection system that leverages clinical, demographic, and neuroimaging data from the OASIS longitudinal dataset. The system is designed to automatically classify patients into categories of non-demented, mildly demented, or fully demented with high accuracy. By incorporating data-driven techniques and predictive analytics, the project seeks to improve diagnostic precision, reduce human error, and provide healthcare professionals with a valuable tool for early detection, personalized treatment planning, and better patient outcomes.
+- **Frontend**: React 18, TypeScript, Material UI, Tailwind CSS
+- **Routing**: React Router DOM
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Build Tool**: Vite
 
-1.3 System Specifications
-Hardware Requirements:
-•	Processor: Intel i5 or higher
-•	RAM: Minimum 8 GB
-•	Storage: 500 GB or more
-•	GPU: Recommended for deep learning models
-Software Requirements:
-•	Operating System: Windows 10 / 11 or Linux
-•	Programming Language: Python 3.x
-•	Libraries: NumPy, Pandas, Scikit-learn, TensorFlow, Keras, Matplotlib, Seaborn
-•	Development Tools: Jupiter Notebook, Visual Studio Code
-•	Framework: Flask (for web interface integration)
-•	Dataset: OASIS Longitudinal Dataset
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+ and npm
+- Backend Flask server running on `http://localhost:5000`
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd dementia-detection-system
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Create environment file:
+```bash
+cp .env.example .env
+```
+
+4. Update the `.env` file with your backend URL:
+```env
+REACT_APP_API_BASE_URL=http://localhost:5000
+```
+
+5. Start the development server:
+```bash
+npm run dev
+```
+
+The application will be available at `http://localhost:5173`
+
+## Backend Integration
+
+### API Endpoints Expected
+
+Your Flask backend should provide these endpoints:
+
+#### 1. Health Check
+```
+GET /health
+Response: { "status": "healthy" }
+```
+
+#### 2. Prediction
+```
+POST /predict
+Content-Type: application/json
+
+Request Body:
+{
+  "age": 75,
+  "gender": "M",
+  "education": 16,
+  "ses": 2,
+  "mmse": 24,
+  "cdr": 0.5,
+  "etiv": 1678,
+  "nwbv": 0.736,
+  "asf": 1.046
+}
+
+Response:
+{
+  "prediction": "Mild Dementia",
+  "confidence": 0.85,
+  "probabilities": {
+    "No Dementia": 0.15,
+    "Mild Dementia": 0.65,
+    "Moderate Dementia": 0.15,
+    "Severe Dementia": 0.05
+  }
+}
+```
+
+### CORS Configuration
+
+Make sure your Flask backend has CORS enabled:
+
+```python
+from flask_cors import CORS
+
+app = Flask(__name__)
+CORS(app, origins=["http://localhost:5173"])
+```
+
+### Sample Flask Backend Structure
+
+```python
+from flask import Flask, request, jsonify
+from flask_cors import CORS
+import joblib
+import numpy as np
+
+app = Flask(__name__)
+CORS(app)
+
+# Load your trained model
+model = joblib.load('your_model.pkl')
+
+@app.route('/health', methods=['GET'])
+def health_check():
+    return jsonify({"status": "healthy"})
+
+@app.route('/predict', methods=['POST'])
+def predict():
+    try:
+        data = request.get_json()
+        
+        # Extract features in the correct order
+        features = np.array([[
+            data['age'],
+            1 if data['gender'] == 'M' else 0,  # Encode gender
+            data['education'],
+            data['ses'],
+            data['mmse'],
+            data['cdr'],
+            data['etiv'],
+            data['nwbv'],
+            data['asf']
+        ]])
+        
+        # Make prediction
+        prediction = model.predict(features)[0]
+        probabilities = model.predict_proba(features)[0]
+        
+        # Map prediction to class names
+        class_names = ['No Dementia', 'Mild Dementia', 'Moderate Dementia', 'Severe Dementia']
+        
+        return jsonify({
+            "prediction": class_names[prediction],
+            "confidence": float(max(probabilities)),
+            "probabilities": {
+                class_names[i]: float(prob) 
+                for i, prob in enumerate(probabilities)
+            }
+        })
+        
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+if __name__ == '__main__':
+    app.run(debug=True, port=5000)
+```
+
+## Project Structure
+
+```
+src/
+├── components/          # Reusable UI components
+│   ├── Footer.tsx
+│   ├── HelpButton.tsx
+│   ├── Layout.tsx
+│   └── Navbar.tsx
+├── pages/              # Page components
+│   ├── AboutPage.tsx
+│   ├── FeaturesPage.tsx
+│   ├── HomePage.tsx
+│   ├── NotFoundPage.tsx
+│   └── PredictPage.tsx
+├── routes/             # Routing configuration
+│   └── AppRoutes.tsx
+├── services/           # API services
+│   └── api.ts
+├── App.tsx
+├── main.tsx
+├── theme.ts
+└── index.css
+```
+
+## Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+
+## Features Used in Prediction
+
+The model uses these patient features:
+
+### Demographic Features
+- **Age**: Patient age in years
+- **Gender**: Male (M) or Female (F)
+- **Education**: Years of formal education
+- **SES**: Socioeconomic Status (1-5 scale)
+
+### Clinical Assessments
+- **MMSE**: Mini-Mental State Examination score (0-30)
+- **CDR**: Clinical Dementia Rating (0, 0.5, 1, 2, 3)
+
+### Brain Measurements
+- **eTIV**: Estimated Total Intracranial Volume (mm³)
+- **nWBV**: Normalized Whole Brain Volume (ratio)
+- **ASF**: Atlas Scaling Factor (ratio)
+
+## Deployment
+
+### Frontend Deployment
+
+1. Build the project:
+```bash
+npm run build
+```
+
+2. Deploy the `dist` folder to your hosting service (Netlify, Vercel, etc.)
+
+3. Update the environment variable for production:
+```env
+REACT_APP_API_BASE_URL=https://your-production-backend.com
+```
+
+### Backend Requirements
+
+Ensure your backend:
+- Accepts the exact JSON format shown above
+- Returns predictions in the expected format
+- Has CORS configured for your frontend domain
+- Handles errors gracefully
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## License
+
+This project is licensed under the MIT License.
